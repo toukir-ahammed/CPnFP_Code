@@ -6,12 +6,12 @@
 - ```SoftwareMetricsVsFPandCP - SoftwareImpacts.xlsx``` contains the dataset with all metrics and correlation analysis
 
 ## Change-proneness Analysis
-1. Open the [change-proneness-main](https://github.com/toukir-ahammed/SIMPAC-24-178/tree/main/change-proneness/change-proneness-main) with Eclipse
+1. Open the [change-proneness-main](https://github.com/toukir-ahammed/CPnFP_Code/tree/main/change-proneness/change-proneness-main) with Eclipse
 2. Clone the project from GitHub which you want to analyze in the directory named ```demo-project```. (_Note: Make sure the project name ends with -repo, e.g., activemq-repo._). For example to analyze Apache ActiveMQ,
 ```
 git clone https://github.com/apache/activemq.git activemq-repo
 ```
-3. Create a configuration file in the ```demo-project``` folder (```projectname.conf```)  for the project you want to analyze. The format of the configuration file can be found [here](https://github.com/toukir-ahammed/SIMPAC-24-178/blob/main/project.conf). The sample configuration file for activemq project ```activemq.conf``` can be found [here](https://github.com/toukir-ahammed/SIMPAC-24-178/blob/main/activemq.conf). In the configuration file, you should give the project name and the list releases/revisions you want to analyze.
+3. Create a configuration file in the ```demo-project``` folder (```projectname.conf```)  for the project you want to analyze. The format of the configuration file can be found [here](https://github.com/toukir-ahammed/CPnFP_Code/blob/main/project.conf). The sample configuration file for activemq project ```activemq.conf``` can be found [here](https://github.com/toukir-ahammed/CPnFP_Code/blob/main/activemq.conf). In the configuration file, you should give the project name and the list releases/revisions you want to analyze.
 4. To Run Analysis, open ```Main.java``` and edit the following line with the project name you want to analyze.
 ```java
 String project = "activemq";
@@ -19,12 +19,12 @@ String project = "activemq";
 5. Run ```Main.java``` and find the results in the ```demo-project/res``` folder. The file named ```projectname-cp.csv``` (e.g., ```activemq-cp.csv```) contains all results.
 
 ## Fault-proneness Analysis
-1. Open the [fault-proneness-main](https://github.com/toukir-ahammed/SIMPAC-24-178/tree/main/fault-proneness/fault-proneness-main) with Eclipse
+1. Open the [fault-proneness-main](https://github.com/toukir-ahammed/CPnFP_Code/tree/main/fault-proneness/fault-proneness-main) with Eclipse
 2. Clone the project from GitHub which you want to analyze in the directory named ```demo-project```. (_Note: Make sure the project name ends with -repo, e.g., activemq-repo._). For example to analyze Apache ActiveMQ,
 ```
 git clone https://github.com/apache/activemq.git activemq-repo
 ```
-3. Create a configuration file in the ```demo-project``` folder (```projectname.conf```)  for the project you want to analyze. The format of the configuration file can be found [here](https://github.com/toukir-ahammed/SIMPAC-24-178/blob/main/project.conf). The sample configuration file for activemq project ```activemq.conf``` can be found [here](https://github.com/toukir-ahammed/SIMPAC-24-178/blob/main/activemq.conf). In the configuration file, you should give the project name and the list releases/revisions you want to analyze and and bug pattern (the regex pattern for identifying bug fixing commits from commit message). For example, let consider the following commit message from ActiveMQ project that can be identified with the regular expression ```“AMQ-\\d+”```.:
+3. Create a configuration file in the ```demo-project``` folder (```projectname.conf```)  for the project you want to analyze. The format of the configuration file can be found [here](https://github.com/toukir-ahammed/CPnFP_Code/blob/main/project.conf). The sample configuration file for activemq project ```activemq.conf``` can be found [here](https://github.com/toukir-ahammed/CPnFP_Code/blob/main/activemq.conf). In the configuration file, you should give the project name and the list releases/revisions you want to analyze and and bug pattern (the regex pattern for identifying bug fixing commits from commit message). For example, let consider the following commit message from ActiveMQ project that can be identified with the regular expression ```“AMQ-\\d+”```.:
     >“[AMQ-8309] Fix spring import range, change optional to be more flexible . . . ”
 
 4. Download Issue Reports from Jira/Bugzilla
